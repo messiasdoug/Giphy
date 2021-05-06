@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    kapt {
+        correctErrorTypes = true
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+
+    implementation project(':domain')
+
+    //Koin
+    implementation "io.insert-koin:koin-android:${versions.koin}"
+
+    //Room
+    implementation "androidx.room:room-runtime:${versions.room}"
+    kapt "androidx.room:room-compiler:${versions.room}"
+
+    //Unit-Test
+    testImplementation "org.assertj:assertj-core:${versions.assertj}"
+    testImplementation "junit:junit:${versions.junit}"
+    testImplementation "io.insert-koin:koin-test:${versions.koin_test}"
+    testImplementation "io.mockk:mockk:${versions.mockk}"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gif"
+            type="ca.com.freshworks.domain.Gif" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small">
+
+        <ImageView
+            android:id="@+id/gif_motion"
+            android:layout_width="@dimen/width_item_gif"
+            android:layout_height="@dimen/height_item_gif"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_bottom_rounded"
+            android:contentDescription="@null"
+            android:src="@{safeUnbox(gif.isFavorite) ? @drawable/ic_star : @drawable/ic_star_border}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gif_motion"
+            app:layout_constraintStart_toStartOf="@id/gif_motion"
+            app:layout_constraintTop_toBottomOf="@id/gif_motion"
+            app:layout_constraintVertical_bias="0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

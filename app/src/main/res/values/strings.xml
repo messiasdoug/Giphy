@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Giphy</string>
+    <string name="message_error">An error occurred.</string>
+    <string name="message_gif_add_favorites_successful">Gif successfully added to favorites</string>
+    <string name="message_gif_remove_favorites_successful">Gif successfully removed from favorites</string>
+    <string name="tab_item_favorites">Favorites</string>
+    <string name="tab_item_trending">Trending</string>
+    <string name="search">Type your text here</string>
+</resources>
